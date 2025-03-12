@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonidos de animales</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Sonidos de Animales</h1>
+        <h2>Gatos</h2>
+        <ul id="gatos"></ul>
+        <h2>Perros</h2>
+        <ul id="perros"></ul>
+        <h2>Hurones</h2>
+        <ul id="hurones"></ul>
+        <h2>Boas Constrictor</h2>
+        <ul id="boas"></ul>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        fetch('/animales/gatos/sonido')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('gatos');
+                data.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.nombre}: ${item.sonido}`;
+                    list.appendChild(li);
+                });
+            });
+
+        fetch('/animales/perros/sonido')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('perros');
+                data.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.nombre}: ${item.sonido}`;
+                    list.appendChild(li);
+                });
+            });
+
+        fetch('/animales/hurones/sonido')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('hurones');
+                data.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.nombre}: ${item.sonido}`;
+                    list.appendChild(li);
+                });
+            });
+
+        fetch('/animales/boas/sonido')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('boas');
+                data.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.nombre}: ${item.sonido}`;
+                    list.appendChild(li);
+                });
+            });
+    </script>
+</body>
+</html>
