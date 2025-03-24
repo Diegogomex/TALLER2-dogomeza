@@ -10,7 +10,7 @@ boas = [BoaConstrictor("Sonia"), BoaConstrictor("Ramona")]
 
 @animal_blueprint.route("/", methods=["GET"])
 def home():
-    return render_template("sonidos.html")
+    return render_template("home.html")
 
 @animal_blueprint.route("/animales/gatos/sonido", methods=["GET"])
 def sonido_gatos():
